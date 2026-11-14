@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق مشرفي ورواد DXN</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0f0c1b 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin: 30px 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #00ffcc;
+            text-shadow: 0 5px 15px rgba(0,255,204,0.3);
+        }
+        p {
+            color: #a0a0c0;
+            font-size: 1.1rem;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            max-width: 1000px;
+            width: 100%;
+        }
+        .card-3d {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            width: 300px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card-3d:hover {
+            transform: translateY(-5px);
+            border-color: #00ffcc;
+        }
+        .card-3d h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .card-3d p {
+            font-size: 0.9rem;
+            color: #b0b0d0;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: linear-gradient(45deg, #00ffcc, #0077ff);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .btn:hover {
+            opacity: 0.85;
+        }
+        /* إخفاء وإظهار الأقسام */
+        .section-view {
+            display: none;
+            width: 100%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .section-view.active {
+            display: block;
+        }
+        .back-btn {
+            background: #ff4757;
+            margin-bottom: 20px;
+        }
+        /* تنسيق المنتجات */
+        .product-item {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* نموذج تسجيل الدخول */
+        form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            font-size: 1rem;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>تطبيق مشرفي ورواد DXN</h1>
+        <p>إدارة الأعضاء، النقاط والمنتجات بكل احترافية</p>
+    </header>
+
+    <!-- الواجهة الرئيسية -->
+    <div class="container" id="mainMenu">
+        <!-- بطاقة 1: المنتجات -->
+        <div class="card-3d">
+            <h3>🛍️ كتالوج المنتجات</h3>
+            <p>استعرض أحدث منتجات شركة DXN العالمية والأسعار.</p>
+            <button class="btn" onclick="showSection('productsSection')">استعراض المنتجات</button>
+        </div>
+
+        <!-- بطاقة 2: تسجيل الدخول -->
+        <div class="card-3d">
+            <h3>📊 إدارة النقاط</h3>
+            <p>سجل دخولك لمتابعة نقاطك وفريقك بكل سهولة وأمان.</p>
+            <button class="btn" onclick="showSection('loginSection')">تسجيل الدخول</button>
+        </div>
+    </div>
+
+    <!-- قسم كتالوج المنتجات -->
+    <div id="productsSection" class="section-view">
+        <button class="btn back-btn" onclick="showSection('mainMenu')">⬅ العودة للرئيسية</button>
+        <h2>كتالوج منتجات DXN</h2>
+        <p style="margin-bottom: 20px;">قائمة المنتجات الأساسية والأسعار العامة</p>
+        
+        <div class="product-item">
+            <div>
+                <h4>فطر ريشي (RG)</h4>
+                <p>مكمل غذائي لتعزيز المناعة وتطهير الجسم</p>
+            </div>
+            <strong style="color: #00ffcc;">$45.00</strong>
+        </div>
+
+        <div class="product-item">
+            <div>
+                <h4>قهوة لينجي ٣ في ١</h4>
+                <p>قهوة صحية مستخلصة مع فطر الجانوديرما</p>
+            </div>
+            <strong style="color: #00ffcc;">$15.00</strong>
+        </div>
+
+        <div class="product-item">
+            <div>
+                <h4>سبيرولينا (Spirulina)</h4>
+                <p>الغذاء السوبر الغني بالفيتامينات والمعادن</p>
+            </div>
+            <strong style="color: #00ffcc;">$28.00</strong>
+        </div>
+    </div>
+
+    <!-- قسم تسجيل الدخول -->
+    <div id="loginSection" class="section-view">
+        <button class="btn back-btn" onclick="showSection('mainMenu')">⬅ العودة للرئيسية</button>
+        <h2>تسجيل دخول الأعضاء والمشرفين</h2>
+        <p style="margin-bottom: 20px;">أدخل بيانات حسابك ورقم عضويتك في DXN للمتابعة</p>
+        
+        <form onsubmit="event.preventDefault(); alert('تم استلام طلب تسجيل الدخول بنجاح!');">
+            <input type="email" placeholder="البريد الإلكتروني" required>
+            <input type="text" placeholder="رقم العضوية في DXN (مثال: 820XXXXXX)" required>
+            <input type="password" placeholder="كلمة المرور" required>
+            <button type="submit" class="btn" style="width: 100%;">دخول للنظام</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - DXN World</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('mainMenu').style.display = 'none';
+            document.getElementById('productsSection').classList.remove('active');
+            document.getElementById('loginSection').classList.remove('active');
+            
+            if(sectionId === 'mainMenu') {
+                document.getElementById('mainMenu').style.display = 'flex';
+            } else {
+                document.getElementById(sectionId).classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
