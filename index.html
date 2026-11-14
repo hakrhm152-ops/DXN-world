@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق مشرفي ورواد DXN</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin: 40px 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            color: #00ffcc;
+        }
+        p {
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+        }
+        /* تصميم البطاقات بشكل ثلاثي الأبعاد 3D Card */
+        .card-3d {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+        .card-3d:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 255, 204, 0.2);
+            border-color: #00ffcc;
+        }
+        .card-3d h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .card-3d p {
+            font-size: 0.95rem;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: linear-gradient(45deg, #00ffcc, #0077ff);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .btn:hover {
+            opacity: 0.85;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>تطبيق مشرفي ورواد DXN</h1>
+        <p>إدارة الأعضاء، النقاط، المنتجات، والفيديوهات بكل احترافية</p>
+    </header>
+
+    <div class="container">
+        <!-- بطاقة 1: المنتجات والأسعار -->
+        <div class="card-3d">
+            <h3>🛍️ كتالوج المنتجات</h3>
+            <p>استعرض أحدث منتجات شركة DXN العالمية مع الأسعار والفيديوهات الترويجية القصيرة.</p>
+            <button class="btn" onclick="alert('جاري الانتقال للكتالوج...')">استعراض المنتجات</button>
+        </div>
+
+        <!-- بطاقة 2: النقاط والأعضاء -->
+        <div class="card-3d">
+            <h3>📊 إدارة النقاط</h3>
+            <p>متابعة نقاط الأعضاء، سجلات التحديث الآمنة، وتنظيم الفريق بكل سهولة.</p>
+            <button class="btn" onclick="alert('خاص بالمشرفين والأعضاء المسجلين')">تسجيل الدخول</button>
+        </div>
+
+        <!-- بطاقة 3: التواصل والاستفسارات -->
+        <div class="card-3d">
+            <h3>💬 تواصل معنا</h3>
+            <p>أرسل استفسارك للزوار، أو تواصل مباشرة مع المشرف المسؤول عن فريقك.</p>
+            <button class="btn" onclick="alert('فتح صفحة التواصل')">تواصل الآن</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - DXN World</p>
+    </footer>
+
+</body>
+</html>
